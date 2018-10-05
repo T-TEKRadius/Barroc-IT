@@ -23,7 +23,7 @@
             </div>
             <div class="buttons">
               <a class="logout" href="#">Logout</a>
-                <a class="add" href="#">Add client</a>
+                <a class="add" href="create">Add client</a>
                 </div>
                 </div>
             <div class="display">
