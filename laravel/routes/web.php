@@ -12,10 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/index', function () {
     return view('index');
 });
 
@@ -31,7 +27,9 @@ Route::get('/sales/create', function (){
     return view('sales/create');
 });
 
-Route::get('sales/edit', function (){
+Route::post('ClientController', 'ClientController@create');
+
+Route::get('/sales/edit', function (){
     return view('sales/edit');
 });
 
