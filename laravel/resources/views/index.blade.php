@@ -15,7 +15,7 @@
     </header>
     <section id="login">
         <div class="container">
-            <form>
+            <form method="POST">
                 <label for="psw">Password</label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
                 <button type="submit">Login</button>

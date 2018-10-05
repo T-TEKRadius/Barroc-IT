@@ -104,7 +104,7 @@ body {
 }
 
 .container {
-  margin: auto;
+  margin: 0 auto;
   width: 80%;
   overflow:hidden;
  }
@@ -201,8 +201,34 @@ footer p {
   background-color: #804F45;
 }
 
+/* SALES INVOICES */
+.pdfview{
+    width: 60%;
+    height: 70%;
+    align-self: center;
+    display: flex;
+}
+#main.invoice{
+    height: 80vh;
+}
+.invoice .container{
+    height: 100%;
+    display: flex;
 
-
+}
+.invoice .container > div{
+    display: flex;
+    align-self: flex-start;
+}
+.invoice .container > div > button{
+    align-self: center;
+    margin-left: 10px;
+    height: 30px;
+    width: 80px;
+}
+#help{
+    height: 70px;
+}
 
 
 

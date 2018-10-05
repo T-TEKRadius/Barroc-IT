@@ -13,13 +13,13 @@
             <h1>Barroc-IT | Invoice</h1>
         </div>
     </header>
-    <section id="main">
+    <section id="main" class="invoice">
         <div class="container">
-            <h2>Invoice of client</h2>
-            <button type="submit">Back</button>
-        </div>
-        <div>
-            <embed src="Path of PDF file.pdf" width=”600” height=”500”>
+            <div>
+                <h2>Invoice of client</h2>
+                <button type="submit" onclick="window.history.back()">Back</button>
+            </div>
+            <embed type="application/pdf" src="{{ asset('invoices/Invoice_Template.pdf') }}" class="pdfview">
         </div>
     </section>
     <section id="help">
