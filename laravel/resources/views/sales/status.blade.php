@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Barroc-IT | Sales status</title>
     <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -18,28 +17,40 @@
         <div class="container">
             <h2>Clients</h2>
             <div class="nav">
-                <div class="search">
-                    <input type="text" name="search" placeholder="Search..">
-                </div>
-                <div class="buttons">
-                    <a class="logout" href="#">Logout</a>
-                    <a class="add" href="#">Add client</a>
-                </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="Search..">
             </div>
+            <div class="buttons">
+              <a class="logout" href="#">Logout</a>
+                <a class="add" href="#">Add client</a>
+                </div>
+                </div>
             <div class="display">
-                <h3>Client</h3>
-                <h3>Status</h3>
-                <h3>Invoice</h3>
+                <table>
+                    <tr>
+                        <th>Client</th>
+                        <th>Status</th>
+                        <th>Invoice</th>
+                    </tr>
+                    @foreach($clients as $client)
+                        <tr>
+                            <td>{{$client->name}}</td>
+                            <td>{{$client->status}}</td>
+                            <td><a href="{{ route('invoice.show', $client->id) }}">{{$client->id}}, </a></td>
+                            <td><a href="{{ route('invoice.edit', $client->id) }}">{{$client->id}}, </a></td>
+                        </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
     </section>
-    <section id="help">
-        <div class="container">
+        <section id="help">
+          <div class="container">
             <h2>Help</h2>
-        </div>
+    </div>
     </section>
     <footer>
-        <p>© BARROC IT | 2018</p>
+      <p>© BARROC IT | 2017</p>
     </footer>
 </body>
 
