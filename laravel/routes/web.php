@@ -35,9 +35,8 @@ Route::get('sales/edit', function (){
     return view('sales/edit');
 });
 
-Route::get('/sales/status', function (){
-    return view('sales/status');
-});
+Route::get('/sales/status/{id}', 'ClientController@show')->name('invoice.show');
+Route::get('/sales/status', 'ClientController@index');
 
 Route::get('/finance/status', function (){
     return view('finance/status');

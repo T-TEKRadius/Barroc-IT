@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Barroc-IT | Sales status</title>
     <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body>
@@ -31,15 +32,25 @@
                         <th>Client</th>
                         <th>Status</th>
                         <th>Invoice</th>
+                        <th>Edit</th>
                     </tr>
                     @foreach($clients as $client)
                         <tr>
-                            <td>{{$client->name}}</td>
-                            <td>{{$client->status}}</td>
-                            <td><a href="{{ route('invoice.show', $client->id) }}">{{$client->id}}, </a></td>
-                            <td><a href="{{ route('invoice.edit', $client->id) }}">{{$client->id}}, </a></td>
+                            <td>{{$client->company_name}}</td>
+                            @if($client->credit_worthy === 0)
+                                <td>
+                                    <i class="fas fa-times"></i>
+                                </td>
+                            @else
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            @endif
+                            <td><a href="">Show</a></td>
+                            <td><a href="">Edit</a></td>
                         </tr>
                     @endforeach
+
                 </table>
             </div>
         </div>

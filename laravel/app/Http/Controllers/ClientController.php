@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -12,11 +13,11 @@ class ClientController extends Controller
         //    ->orderBy('title', 'DESC')
         //    ->get(['id', 'title', 'publisher']);
 
-        $games = Game::all();
+        $clients = Client::all();
 
-        //dd($games); // dump & die
+        //dd($clients); // dump & die
 
-        return view('games/index')
-            ->with('games', $games);
+        return view('sales/status')
+            ->with('clients', $clients);
     }
 }
