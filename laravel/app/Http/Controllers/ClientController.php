@@ -49,6 +49,10 @@ class ClientController extends Controller
             return redirect('sales/status');
         }
     }
-    public function edit(){
+    public function edit($id){
+        $client = Client::findOrFail($id);
+
+        return view('sales/create')
+            ->with('client', $client);
     }
 }

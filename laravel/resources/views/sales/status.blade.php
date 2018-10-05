@@ -47,7 +47,7 @@
                                 </td>
                             @endif
                             <td><a href="">Show</a></td>
-                            <td><a href="">Edit</a></td>
+                            <td><a href="edit/{{$client->id}}">Edit</a></td>
                         </tr>
                     @endforeach
 
