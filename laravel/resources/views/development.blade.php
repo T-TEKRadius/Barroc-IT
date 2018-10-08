@@ -6,7 +6,6 @@
     <title>Barroc-IT | Development</title>
     <link href="{{ asset('/css/css.css') }}" rel="stylesheet"> 
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -24,8 +23,8 @@
     <div class="container">
         <section id="help">
             <h2>Help</h2>
+        </section>
     </div>
-    </section>
 </body>
 
 </html>
