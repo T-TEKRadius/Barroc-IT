@@ -12,6 +12,10 @@
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/index', function () {
     return view('index');
 });
 
@@ -27,12 +31,9 @@ Route::get('/sales/create', function (){
     return view('sales/create');
 });
 
-Route::post('ClientController', 'ClientController@create');
-
-Route::get('/sales/edit', function (){
+Route::get('sales/edit', function (){
     return view('sales/edit');
 });
-Route::get('/sales/edit/{id}', 'ClientController@edit');
 
 Route::get('/sales/status/{id}', 'ClientController@show')->name('invoice.show');
 Route::get('/sales/status', 'ClientController@index');
