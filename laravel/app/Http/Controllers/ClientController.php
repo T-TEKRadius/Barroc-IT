@@ -17,11 +17,14 @@ class ClientController extends Controller
         //    ->get(['id', 'title', 'publisher']);
 
         $clients = Client::all();
+        $sales = Sale::all();
+
 
         //dd($clients); // dump & die
 
         return view('sales/status')
-            ->with('clients', $clients);
+            ->with('clients', $clients)
+            ->with('sales', $sales);
     }
     public function create(Request $request)
     {

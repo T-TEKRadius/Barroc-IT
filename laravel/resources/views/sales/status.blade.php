@@ -37,9 +37,13 @@
                     @foreach($clients as $client)
                         <tr>
                             <td>{{$client->company_name}}</td>
-                            @if($client->credit_worthy === 0)
+                            @if( $sales[$client->id-1]->offer_status === 0)
                                 <td>
                                     <i class="fas fa-times"></i>
+                                </td>
+                            @elseif($sales[$client->id-1]->offer_status === 2)
+                                <td>
+                                    <i class="fas fa-spinner"></i>
                                 </td>
                             @else
                                 <td>
