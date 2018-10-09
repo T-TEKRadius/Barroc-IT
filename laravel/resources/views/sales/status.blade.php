@@ -5,68 +5,56 @@
     <meta charset="utf-8">
     <title>Barroc-IT | Sales status</title>
     <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="{{ asset('/css/fontello.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('/js/modelscript.js') }}"></script>
 </head>
 
 <body>
     <header>
         <div class="container">
-          <h1><a href="#">Barroc-IT | Sales</a></h1>
+            <h1>Barroc IT | Sales </h1>
         </div>
     </header>
-    <section id="main">
-        <div class="container">
-            <h2>Clients</h2>
-            <div class="nav">
+    <div class="container">
+        <h2>Clients</h2>
+        <div class="nav">
             <div class="search">
                 <input type="text" name="search" placeholder="Search..">
             </div>
             <div class="buttons">
-              <a class="logout" href="#">Logout</a>
-                <a class="add" href="create">Add client</a>
-                </div>
-                </div>
-            <div class="display">
-                <table>
-                    <tr>
-                        <th>Client</th>
-                        <th>Status</th>
-                        <th>Invoice</th>
-                        <th>Edit</th>
-                    </tr>
-                    @foreach($clients as $client)
-                        <tr>
-                            <td>{{$client->company_name}}</td>
-                            @if( $sales[$client->id-1]->offer_status === 0)
-                                <td>
-                                    <i class="fas fa-times"></i>
-                                </td>
-                            @elseif($sales[$client->id-1]->offer_status === 2)
-                                <td>
-                                    <i class="fas fa-spinner"></i>
-                                </td>
-                            @else
-                                <td>
-                                    <i class="fas fa-check"></i>
-                                </td>
-                            @endif
-                            <td><a href="">Show</a></td>
-                            <td><a href="edit/{{$client->id}}">Edit</a></td>
-                        </tr>
-                    @endforeach
+                <a href="#">Back</a>
+            </div>
+        </div>
+        <div class="display">
+            <div class="client">
+                <h3>Client</h3>
+            </div>
+            <div class="status">
+                <h3>Status</h3>
+            </div>
+            <div class="invoice">
+                <h3>Invoice</h3>
+            </div>
+        </div>
+    </div>
+    <section id="help">
+        <div class="container">
+            <button onclick="button()" id="helpBtn"><span>Help</span><i class="icon-help-circled"></i></button>
 
-                </table>
+            <div id="helpModal" class="modal">
+                <div class="help-modal-content">
+                    <span class="close">&times;</span>
+                    <p>To see client's status write his first and last name in the search bar and click on the right name.</p>
+                </div>
             </div>
         </div>
     </section>
-        <section id="help">
-          <div class="container">
-            <h2>Help</h2>
-    </div>
-    </section>
     <footer>
-      <p>© BARROC IT | 2017</p>
+        <p>© BARROC IT | 2018</p>
     </footer>
+    <script type="text/javascript">
+        openHelpModal();
+    </script>
 </body>
 
 </html>
