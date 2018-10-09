@@ -10,14 +10,18 @@
 <body>
     <header>
         <div class="container">
-            <h1>Barroc-IT | Add Client</h1>
+            @if(isset($client) and isset($sales))
+                <h1>Barroc-IT | Edit Client</h1>
+            @else
+                <h1>Barroc-IT | Add Client</h1>
+            @endif
         </div>
     </header>
     <button type="submit" onclick="window.location='/sales/status';">Back</button>
     <section id="questions">
         <div class="container">
             <h2>Client information:</h2>
-            <form role="form" action="{{action('ClientController@create')}}" method="post">
+            <form role="form" action="@if(isset($client) and isset($sales)) ../apply/{{ $client->id }} @else {{action('ClientController@create')}} @endif" method="post">
                 {{csrf_field()}}
                 <label for="company_name">Company name:</label>
                 <input type="text" id="company_name" name="company_name" required value="@if(isset($client)){{$client->company_name}}@endif">
@@ -53,37 +57,47 @@
                 <input type="text" id="phone_number" name="phone_number" required value="@if(isset($client)){{$client->phone_number}}@endif">
                 <br>
                 <label for="fax_number">Fax number:</label>
-                <input type="text" id="fax_number" name="fax_number" required value="@if(isset($client)){{$client->fax_number}}@endif">
+                <input type="text" id="fax_number" name="fax_number" value="@if(isset($client)){{$client->fax_number}}@endif">
                 <br>
                 <label for="offer_numbers">Offer numbers:</label>
-                <input type="text" id="offer_numbers" name="offer_numbers" required value="@if(isset($client)){{$client->offer_numbers}}@endif">
+                <input type="number" id="offer_numbers" name="offer_numbers" required value="@if(isset($sales)){{$sales->offer_number}}@endif">
                 <br>
                 <label for="offer_stat">Offer status:</label>
-                <select name="offer_stat" id="offer_stat" value="@if(isset($client)){{$client->offer_stat}}@endif">
-                    <option value="0">Closed</option>
-                    <option value="1">Open</option>
-                    <option value="2">Pending</option>
+                <select name="offer_stat" id="offer_stat">
+                    <option value="0" @if(isset($sales) and $sales->offer_status==0)selected @endif>Closed</option>
+                    <option value="1" @if(isset($sales) and $sales->offer_status==1)selected @endif>Open</option>
+                    <option value="2" @if(isset($sales) and $sales->offer_status==2)selected @endif>Pending</option>
                 </select>
                 <br>
                 <label for="prospect">Prospect:</label>
-                <input type="text" id="prospect" name="prospect" required value="@if(isset($client)){{$client->prospect}}@endif">
+                <select name="prospect" id="prospect" value="@if(isset($client)){{$client->prospect}}@endif">
+                    <option value="0" @if(isset($client) and $client->prospect==0)selected @endif>No</option>
+                    <option value="1" @if(isset($client) and $client->prospect==1)selected @endif>Yes</option>
+                </select>
                 <br>
                 <label for="date_of_action">Date of action:</label>
-                <input type="date" id="date_of_action" name="date_of_action" required value="@if(isset($client)){{$client->date_of_action}}@endif">
+                <input type="date" id="date_of_action" name="date_of_action" required value="@if(isset($sales)){{$sales->date_of_action}}@endif">
                 <br>
                 <label for="l_contact_date">Last contact date:</label>
-                <input type="text" id="l_contact_date" name="l_contact_date" required value="@if(isset($client)){{$client->l_contact_date}}@endif">
+                <input type="date" id="l_contact_date" name="l_contact_date" required value="@if(isset($sales)){{$sales->last_contact_date}}@endif">
                 <br>
                 <label for="n_action">Next action:</label>
-                <input type="date" id="n_action" name="n_action" required value="@if(isset($client)){{$client->n_action}}@endif">
+                <input type="date" id="n_action" name="n_action" required value="@if(isset($sales)){{$sales->next_action}}@endif">
                 <br>
                 <label for="sales_percentage">Sales percentage</label>
-                <input type="text" id="sales_percentage" name="sales_percentage" value="@if(isset($client)){{$client->sales_percentage}}@endif">
+                <input type="text" id="sales_percentage" name="sales_percentage" value="@if(isset($client)){{$client->discount_percentage}}@endif">
                 <br>
                 <label for="credit_worthy">Credit worthy:</label>
-                <input type="text" id="credit_worthy" name="credit_worthy" required value="@if(isset($client)){{$client->credit_worthy}}@endif">
+                <select name="credit_worthy" id="credit_worthy" value="@if(isset($client)){{$client->credit_worthy}}@endif">
+                    <option value="0" @if(isset($client) and $client->credit_worthy==0)selected @endif>No</option>
+                    <option value="1" @if(isset($client) and $client->credit_worthy==1)selected @endif>Yes</option>
+                </select>
                 <br>
-                <button type="submit">Add client</button>
+                @if(isset($client) and isset($sales))
+                    <button type="submit" name="apply">Apply</button>
+                @else
+                    <button type="submit" name="submit">Add client</button>
+                @endif
             </form>
         </div>
     </section>
@@ -92,5 +106,4 @@
     </div>
     </section>
 </body>
-
 </html>

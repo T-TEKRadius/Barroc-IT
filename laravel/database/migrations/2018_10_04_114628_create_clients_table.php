@@ -25,7 +25,7 @@ class CreateClientsTable extends Migration
             $table->string('contact_person');
             $table->string('initials');
             $table->string('phone_number');
-            $table->string('fax_number');
+            $table->string('fax_number')->nullable(true);
             $table->string('email');
             $table->boolean('credit_worthy');
             $table->integer('discount_percentage')->default(0);
