@@ -11,9 +11,9 @@
     <header>
         <div class="container">
             @if(isset($client) and isset($sales))
-                <h1>Barroc-IT | Edit Client</h1>
+                <h1><a href="#">Barroc-IT | Edit Client</a></h1>
             @else
-                <h1>Barroc-IT | Add Client</h1>
+                <h1><a href="#">Barroc-IT | Add Client</a></h1>
             @endif
         </div>
     </header>
@@ -101,9 +101,14 @@
             </form>
         </div>
     </section>
-    <div class="container">
-        <h2>Help</h2>
-    </div>
+    <section id="help">
+        <div class="container">
+            <h2>Help</h2>
+        </div>
+    </section>
+    <footer>
+        <p>© BARROC IT | 2017</p>
+    </footer>
     </section>
 </body>
 </html>

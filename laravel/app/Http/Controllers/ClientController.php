@@ -115,11 +115,11 @@ class ClientController extends Controller
 
             }
             else{
-                return view('sales/status');
+                return route('sales.index');
             }
         }
         else{
-            return view('sales/status');
+            return route('sales.index');
         }
     }
 }
