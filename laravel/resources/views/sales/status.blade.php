@@ -62,7 +62,7 @@
         <section id="help">
           <div class="container">
             <h2>Help</h2>
-    </div>
+            </div>
     </section>
     <footer>
       <p>© BARROC IT | 2017</p>

@@ -19,9 +19,7 @@ Route::get('/development', function () {
     return view('development/development');
 });
 
-Route::get('/sales', function (){
-    return view('sales/sales');
-});
+Route::get('/sales', 'ClientController@index');
 
 Route::get('/sales/create', function (){
     return view('sales/create');
