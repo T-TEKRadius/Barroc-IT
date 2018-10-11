@@ -37,11 +37,11 @@
                     @foreach($clients as $client)
                         <tr>
                             <td>{{$client->company_name}}</td>
-                            @if( $client->offer_status === 0)
+                            @if( $sales[$client->id-1]->offer_status === 0)
                                 <td>
                                     <i class="fas fa-times"></i>
                                 </td>
-                            @elseif($client->offer_status === 2)
+                            @elseif($sales[$client->id-1]->offer_status === 2)
                                 <td>
                                     <i class="fas fa-spinner"></i>
                                 </td>
@@ -51,7 +51,7 @@
                                 </td>
                             @endif
                             <td><a href="">Show</a></td>
-                            <td><a href="{{ route('sales.edit', ['id' => $client->id] )}}">Edit</a></td>
+                            <td><a href="edit/{{$client->id}}">Edit</a></td>
                         </tr>
                     @endforeach
 
