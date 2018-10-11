@@ -21,7 +21,7 @@
     <section id="questions">
         <div class="container">
             <h2>Client information:</h2>
-            <form role="form" action="@if(isset($client) and isset($sales)) ../apply/{{ $client->id }} @else {{action('ClientController@create')}} @endif" method="post">
+            <form role="form" action="@if(isset($client) and isset($sales)) {{ route('sales.apply', ['id' =>  $client->id]) }} @else {{action('ClientController@create')}} @endif" method="post">
                 {{csrf_field()}}
                 <label for="company_name">Company name:</label>
                 <input type="text" id="company_name" name="company_name" required value="@if(isset($client)){{$client->company_name}}@endif">

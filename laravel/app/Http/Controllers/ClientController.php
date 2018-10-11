@@ -71,13 +71,9 @@ class ClientController extends Controller
     }
     public function edit($id){
         $client = Client::findOrFail($id);
-        $primaryKey = 'client_id';
         $sales = Sale::findOrFail($id);
-        $primaryKey = 'id';
 
-        return view('sales/create')
-            ->with('client', $client)
-            ->with('sales', $sales);
+        return view('sales/create', array('client' => $client, 'sales' => $sales));
     }
     public function apply($id, Request $request){
         if(isset($id)){
