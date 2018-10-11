@@ -402,6 +402,33 @@ margin-right: 2px;
   background-color: #ef1f04;
 }
 
+/* INVOICE */
+
+.pdfview{
+    width: 60%;
+    height: 70%;
+    align-self: center;
+    display: flex;
+}
+#main.invoice{
+    height: 80vh;
+}
+.invoice .container{
+    height: 100%;
+    display: flex;
+
+}
+.invoice .container > div{
+    display: flex;
+    align-self: flex-start;
+}
+.invoice .container > div > button{
+    align-self: center;
+    margin-left: 10px;
+    height: 30px;
+    width: 80px;
+}
+
 /* LOGIN */
 
 #helpBtn {

@@ -22,7 +22,7 @@
                 <h2>Client information:</h2>
             </div>
             <div class="buttons">
-                <div class="back"> <a href="#">Back</a></div>
+                <div class="back"><a href="#">Back</a></div>
             </div>
         </div>
     </div>

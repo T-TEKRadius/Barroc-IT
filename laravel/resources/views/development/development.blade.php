@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Barroc-IT | Sales status</title>
+    <title>Barroc-IT | Development status</title>
     <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/fontello.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('/js/modelscript.js') }}"></script>

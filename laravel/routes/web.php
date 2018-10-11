@@ -11,21 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::get('/index', 'HomeController@index');
 
-Route::get('/development', function () {
-    return view('development/development');
-});
+Route::get('/development', 'DevelopmentController@index');
 
-Route::get('/sales', function (){
-    return view('sales/sales');
-});
+Route::get('/sales', 'SalesController@index');
+
+Route::get('/finance', 'FinanceController@index');
 
 Route::get('/sales/create', function (){
     return view('sales/create');
@@ -39,10 +33,19 @@ Route::get('/sales/status', function (){
     return view('sales/status');
 });
 
+Route::get('/sales/invoice', function (){
+    return view('sales/invoice');
+});
+//::get('/sales/invoice/{id}', '');
+
 Route::get('/finance/status', function (){
     return view('finance/status');
 });
 
 Route::get('/sales/nav', function (){
     return view('sales/nav');
+});
+
+Route::get('/development/status', function (){
+    return view('development/development');
 });
