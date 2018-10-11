@@ -28,7 +28,6 @@ class ClientController extends Controller
     }
     public function create(Request $request)
     {
-
         $input = $request->all();
         $exist = Client::where('company_name', $input['company_name'])->first();
         if ($exist) {
@@ -109,12 +108,10 @@ class ClientController extends Controller
 
 
 
-            }
-            else{
+            } else {
                 return route('sales.index');
             }
-        }
-        else{
+        } else {
             return route('sales.index');
         }
     }
