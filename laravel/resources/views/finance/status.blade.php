@@ -22,11 +22,11 @@
                 <h2>Client information:</h2>
             </div>
             <div class="buttons">
-                <div class="back"> <a href="#">Back</a></div>
+              <div class="back"><a href="javascript:history.back()">Back</a></div>
             </div>
         </div>
         <div class="search">
-            <input type="text" name="search" placeholder="Search..">
+            <input type="text" name="search" placeholder="Client's name...">
         </div>
         <div class="buttons">
             <a class="add" href="#">Add invoice</a>

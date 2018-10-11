@@ -17,7 +17,7 @@
         <div class="container">
             <div>
                 <h2>Invoice of client</h2>
-                <button type="submit" onclick="window.history.back()">Back</button>
+                <a href="javascript:history.back()">Back</a>
             </div>
             <embed type="application/pdf" src="{{ asset('invoices/Invoice_Template.pdf') }}" class="pdfview">
         </div>

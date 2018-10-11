@@ -16,19 +16,23 @@
         </div>
     </header>
     <div class="container">
-        <h2>Choose client:</h2>
+      <div class="title">
+        <h2>Select client:</h2>
+        </div>
         <div class="nav">
             <div class="search">
-                <input type="text" name="search" placeholder="Choose client">
+                <input type="text" name="search" placeholder="Client's name...">
             </div>
             <div class="buttons">
-                <a href="#">Back</a>
+              <a href="javascript:history.back()">Back</a>
             </div>
         </div>
     </div>
     <section id="questions">
         <div class="container">
+        <div class="title">
             <h2>Client information:</h2>
+            </div>
             <form>
                 <p>
                     <label for="company_name">Company:</label>
@@ -122,7 +126,7 @@
             <div id="helpModal" class="modal">
                 <div class="help-modal-content">
                     <span class="close">&times;</span>
-                    <p>To edit client's information fill in the fields you want to change and press the 'Edit Client' button.</p>
+                    <p>To edit client's information fill in the fields you want to change and press the 'Update' button.</p>
                 </div>
             </div>
         </div>

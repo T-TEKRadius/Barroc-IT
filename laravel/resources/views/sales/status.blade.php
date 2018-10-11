@@ -19,7 +19,7 @@
         <h2>Clients</h2>
         <div class="nav">
             <div class="search">
-                <input type="text" name="search" placeholder="Search..">
+                <input type="text" name="search" placeholder="Client's name...">
             </div>
             <div class="buttons">
                 <a href="#">Back</a>

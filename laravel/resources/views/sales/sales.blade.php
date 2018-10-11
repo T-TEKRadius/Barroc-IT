@@ -22,7 +22,7 @@
                 <input type="text" name="search" placeholder="Search..">
             </div>
             <div class="buttons">
-                <a href="#">Back</a>
+              <a href="javascript:history.back()">Back</a>
             </div>
         </div>
         <h2>Client information:</h2>

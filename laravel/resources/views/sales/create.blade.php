@@ -22,7 +22,7 @@
                 <h2>Client information:</h2>
             </div>
             <div class="buttons">
-                <div class="back"><a href="#">Back</a></div>
+                <div class="back"><a href="javascript:history.back()">Back</a></div>
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@
                 <p>
 
                     <label for="credit_worthy">Credit worthy:</label>
-                    <input type="text" id="credit_worthy" name="credit_worthy">
+                    <input type="text" id="credit_worthy" name="credit_worthy" placeholder="Y/N">
                 </p>
                 <div class="add">
                     <a href="#">Add Client</a>
