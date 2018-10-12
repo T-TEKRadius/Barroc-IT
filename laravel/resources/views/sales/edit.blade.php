@@ -22,9 +22,11 @@
         <div class="nav">
             <div class="search">
                 <input type="text" name="search" placeholder="Client's name...">
+                <a class="searchBtn"href="#">Search</a>
             </div>
             <div class="buttons">
               <a href="javascript:history.back()">Back</a>
+
             </div>
         </div>
     </div>

@@ -138,6 +138,10 @@ header h1 {
 /* FOOTER */
 
 footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-top: 2px solid #808080;
   -webkit-box-shadow: inset 0px 12px 20px 0px rgba(0,0,0,0.28);
   -moz-box-shadow: inset 0px 12px 20px 0px rgba(0,0,0,0.28);
@@ -298,13 +302,29 @@ margin-right: 2px;
   flex: 1;
 }
 
+.searchBtn {
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-align: center;
+  color: white;
+  background-color:  #101334;
+  transition: 0.3s ease-in-out;
+}
+
+.searchBtn:hover{
+  background-color: #222870;
+}
+
 .buttons a {
   margin-right: 10px;
   float: right;
   font-weight: 500;
   display: inline-block;
   border-radius: 4px;
-  padding: 10px 30px;
+  padding: 8px 20px;
   text-align: center;
   color: white;
   background-color:  #101334;

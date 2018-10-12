@@ -19,10 +19,10 @@
         <h2>Clients</h2>
         <div class="nav">
             <div class="search">
-                <input type="text" name="search" placeholder="Client's name...">
+                <input type="text" name="search" placeholder="Client's name..">
             </div>
             <div class="buttons">
-                <a href="#">Back</a>
+                <a href="javascript:history.back()">Back</a>
             </div>
         </div>
         <div class="display">

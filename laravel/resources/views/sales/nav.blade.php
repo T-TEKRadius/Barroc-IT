@@ -15,10 +15,10 @@
             <h1>Sales</h1>
             <nav class="salesnav">
                 <ul>
-                    <li> <a href="#"><span>Add Client</span></a></li>
-                    <li><a href="#"> <span>Edit Client</span></a></li>
-                    <li><a href="#"><span> Client's status</span></a></li>
-                    <li><a href="#"><span> Invoices</span></a></li>
+                    <li> <a href="{{route('sales.create')}}"><span>Add Client</span></a></li>
+                    <li><a href="{{route('sales.edit')}}"> <span>Edit Client</span></a></li>
+                    <li><a href="{{route('sales.status')}}"><span> Client's status</span></a></li>
+                    <li><a href="{{route('sales.invoice')}}"><span> Invoices</span></a></li>
                     <li><a href="#"> Logout</a></li>
                 </ul>
             </nav>
