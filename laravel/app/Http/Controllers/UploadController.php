@@ -6,6 +6,7 @@ use App\Invoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Client;
+use App\Http\Controllers\Response;
 
 class UploadController extends Controller
 {
@@ -38,7 +39,11 @@ class UploadController extends Controller
     }
     public function download($id, $link)
     {
-        return response()->download(storage_path('app\\'.$id.'\\'.$link, 'inline'));
+        $hash = Invoice::select('hash')->where('client_id', $id)->where('invoice_link', $link)->get();
+
+        $file = public_path().'\\uploads\\'.$id.'\\'.$link.'\\'.$hash[0]['hash'].'.pdf';
+        $headers = array('Content-Type: application/pdf',);
+        return response()->download($file, $link,$headers);
     }
 
     public function delete($id, $link){
