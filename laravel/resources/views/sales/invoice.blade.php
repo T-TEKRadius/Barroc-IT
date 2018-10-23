@@ -24,7 +24,7 @@
             </div>
             <div class="buttons">
                 <a class="logout" href="#">Logout</a>
-                <a class="add" href="create/{{ $client->id }}">Add Invoice</a>
+                <a class="add" href="create/{{ $client->id}}">Add Invoice</a>
             </div>
         </div>
         <div class="display">
@@ -32,27 +32,17 @@
                 <tr>
                     <th>File</th>
                     <th>Added At</th>
+                    <th>View</th>
+                    <th>Delete</th>
                 </tr>
-                {{--@foreach($clients as $client)--}}
-                    {{--<tr>--}}
-                        {{--<td>{{$client->company_name}}</td>--}}
-                        {{--@if( $sales[$client->id-1]->offer_status === 0)--}}
-                            {{--<td>--}}
-                                {{--<i class="fas fa-times"></i>--}}
-                            {{--</td>--}}
-                        {{--@elseif($sales[$client->id-1]->offer_status === 2)--}}
-                            {{--<td>--}}
-                                {{--<i class="fas fa-spinner"></i>--}}
-                            {{--</td>--}}
-                        {{--@else--}}
-                            {{--<td>--}}
-                                {{--<i class="fas fa-check"></i>--}}
-                            {{--</td>--}}
-                        {{--@endif--}}
-                        {{--<td><a href="">Show</a></td>--}}
-                        {{--<td><a href="edit/{{$client->id}}">Edit</a></td>--}}
-                    {{--</tr>--}}
-                {{--@endforeach--}}
+                @foreach($client->invoices as $invoice)
+                    <tr>
+                        <td><a href="{{ route('invoice.download', ['id'=>$client->id, 'link'=>$invoice->invoice_link]) }}">{{$invoice->invoice_link}}</a></td>
+                        <td>{{$invoice->created_at}}</td>
+                        <td><a href="{{ route('invoices.show', ['id'=>$client->id, 'link'=>$invoice->invoice_link]) }}">Show</a></td>
+                        <td><a href="{{ route('invoice.delete', ['id'=>$client->id, 'link'=>$invoice->invoice_link]) }}">Delete</a></td>
+                    </tr>
+                @endforeach
 
             </table>
         </div>

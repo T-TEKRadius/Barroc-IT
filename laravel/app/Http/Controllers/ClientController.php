@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\Sale;
+use App\Invoice;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -83,7 +84,7 @@ class ClientController extends Controller
             if (isset($request['company_name'])){
                 $input=$request;
 
-                $client = Client::where('id', $id)->update([
+                $client = Client::findOrFail($id)->update([
                     'address_1' => $input['address_1'],
                     'company_name' => $input['company_name'],
                     'zipcode_1' => $input['zipcode_1'],
@@ -100,7 +101,7 @@ class ClientController extends Controller
                     'credit_worthy' => $input['credit_worthy'],
                     'prospect' => $input['prospect']
                 ]);
-                $sales = Sale::where('client_id', $id)->update([
+                $sales = Sale::findOrFail($id)->update([
                     'offer_number' => $input['offer_numbers'],
                     'offer_status' => $input['offer_stat'],
                     'next_action' => $input['n_action'],
@@ -108,15 +109,19 @@ class ClientController extends Controller
                 ]);
 
                 return redirect()->route('sales.index');
-
-
-
-
             } else {
                 return route('sales.index');
             }
         } else {
             return route('sales.index');
         }
+    }
+
+    public function show($id){
+
+        $client = Client::find($id);
+
+        return view('sales/invoice')
+            ->with('client', $client);
     }
 }

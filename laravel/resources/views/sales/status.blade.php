@@ -50,7 +50,7 @@
                                     <i class="fas fa-check"></i>
                                 </td>
                             @endif
-                            <td><a href="">Show</a></td>
+                            <td><a href="status/{{$client->id}}">Show({{ count($client->invoices) }})</a></td>
                             <td><a href="edit/{{$client->id}}">Edit</a></td>
                         </tr>
                     @endforeach

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
+    protected $primaryKey = 'client_id';
     //
     protected $fillable = [
         'client_id',

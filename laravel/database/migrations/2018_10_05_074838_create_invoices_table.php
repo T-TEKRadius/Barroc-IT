@@ -17,6 +17,7 @@ class CreateInvoicesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('client_id');
             $table->string('invoice_link');
+            $table->string('hash')->default('');
             $table->timestamps();
         });
     }

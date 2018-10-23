@@ -36,6 +36,14 @@ Route::get('/sales/edit/{id}', 'ClientController@edit');
 Route::get('/sales/status/{id}', 'ClientController@show')->name('invoice.show');
 Route::get('/sales/status', 'ClientController@index')->name('sales.index');
 
+Route::get('/sales/status/create/{id}', 'UploadController@show')->name('invoice.add.show');
+Route::post('/sales/status/create/{id}', 'UploadController@add')->name('invoice.add.add');
+
+Route::get('/sales/status/delete/{id}/{link}', 'UploadController@delete')->name('invoice.delete');
+
+Route::get('/sales/satus/show/{id}/{link}', 'UploadController@invoice')->name('invoices.show');
+Route::get('/sales/status/{id}/{link}', 'UploadController@download')->name('invoice.download');
+
 Route::get('/finance/status', function (){
     return view('finance/status');
 });
