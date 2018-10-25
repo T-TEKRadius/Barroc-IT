@@ -3,15 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Sale;
 use App\Invoice;
+use App\Finance;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\In;
 
 class ClientController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest')->except('destroy');
+    }
     public function index() {
         //$games = Game::where('title', 'LIKE', '%a%')
         //    ->orderBy('title', 'DESC')
@@ -20,12 +28,31 @@ class ClientController extends Controller
         $clients = Client::all();
         $sales = Sale::all();
 
-
-        //dd($clients); // dump & die
-
         return view('sales/status')
             ->with('clients', $clients)
             ->with('sales', $sales);
+    }
+    public function login(Request $request){
+
+        $userdata = array(
+            'department'     => $request->department,
+            'password'  => $request->password
+        );
+        if (Auth::attempt($userdata)) {
+
+            echo 'SUCCESS!';
+            return Redirect('/'.Auth::user()->department);
+
+        } else {
+
+            echo 'Wrong password';
+
+        }
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
     public function create(Request $request)
     {
@@ -65,19 +92,35 @@ class ClientController extends Controller
             ];
             Sale::create($inputs_sales);
 
+            $input_finance = [
+                'client_id' =>$id[0]['id'],
+                'created_at' => Carbon::createFromFormat('Y-m-d', date('Y-m-d'))
+            ];
+
+            Finance::create($input_finance);
+
+
             echo 'Client Added';
-            return redirect('sales/status');
+            return redirect('sales');
         }
     }
     public function edit($id){
         $client = Client::findOrFail($id);
-        $primaryKey = 'client_id';
         $sales = Sale::findOrFail($id);
-        $primaryKey = 'id';
 
-        return view('sales/create')
-            ->with('client', $client)
-            ->with('sales', $sales);
+
+        if(fnmatch('*/finance', url()->previous()))
+        {
+            return view('sales/create')
+                ->with('client', $client)
+                ->with('sales', $sales)
+                ->with('key', '0800fc577294c34e0b28ad2839435945');
+        }
+        else if(fnmatch('*/sales/*', url()->previous())) {
+            return view('sales/create')
+                ->with('client', $client)
+                ->with('sales', $sales);
+        }
     }
     public function apply($id, Request $request){
         if(isset($id)){

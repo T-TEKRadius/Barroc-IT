@@ -20,7 +20,7 @@
     <title>Document</title>
 </head>
 <body>
-<button type="submit" onclick="window.location='/sales/status/{{$file['id']}}';">Back</button>
+<button type="submit" onclick="window.location='{{ url()->previous() }}';">Back</button>
 <embed src= "{{URL::asset('uploads/'.$file['id'].'/'.$file['link'].'/'.$file['hash'].'.pdf')}}" width= "100%" >
 </body>
 </html>

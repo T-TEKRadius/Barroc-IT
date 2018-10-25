@@ -16,13 +16,13 @@ class CreateFinanceTable extends Migration
         Schema::create('finance', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('client_id');
-            $table->unsignedInteger('to_pay');
-            $table->unsignedDecimal('invoice_amount');
-            $table->unsignedDecimal('revenue');
-            $table->unsignedDecimal('limit');
-            $table->string('bank_account_number');
-            $table->unsignedInteger('ledger_number');
-            $table->string('vat_number');
+            $table->unsignedInteger('to_pay')->nullable(true);
+            $table->unsignedDecimal('invoice_amount')->nullable(true);
+            $table->unsignedDecimal('revenue')->nullable(true);
+            $table->unsignedDecimal('limit')->nullable(true);
+            $table->string('bank_account_number')->nullable(true);
+            $table->unsignedInteger('ledger_number')->nullable(true);
+            $table->string('vat_number')->nullable(true);
             $table->timestamps();
         });
     }

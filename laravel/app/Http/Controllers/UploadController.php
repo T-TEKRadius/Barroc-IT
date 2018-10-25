@@ -30,7 +30,13 @@ class UploadController extends Controller
 
         Invoice::create($invoice_store);
 
-        return redirect()->route('invoice.show', $id);
+        if(fnmatch('*/finance/*/*', url()->previous()))
+        {
+            return redirect()->route('finance.show');
+        }
+        else if(fnmatch('*/sales/*/*', url()->previous())) {
+            return redirect()->route('invoice.show', $id);
+        }
 
 
 

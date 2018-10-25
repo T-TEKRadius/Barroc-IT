@@ -13,7 +13,7 @@
         <h1><a href="#">Barroc-IT | Add Invoice</a></h1>
     </div>
 </header>
-<button type="submit" onclick="window.location='/sales/status';">Back</button>
+<button type="submit" onclick="window.location='{{ url()->previous() }}';">Back</button>
 <section id="questions">
     <div class="container">
         <h2>Invoice Information:</h2>

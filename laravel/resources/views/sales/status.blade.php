@@ -22,7 +22,7 @@
                 <input type="text" name="search" placeholder="Search..">
             </div>
             <div class="buttons">
-              <a class="logout" href="#">Logout</a>
+              <a class="logout" href="{{ route('logout') }}">Logout</a>
                 <a class="add" href="create">Add client</a>
                 </div>
                 </div>

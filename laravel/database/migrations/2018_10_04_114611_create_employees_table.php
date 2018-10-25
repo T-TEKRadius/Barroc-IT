@@ -17,6 +17,7 @@ class CreateEmployeesTable extends Migration
             $table->increments('id');
             $table->string('department');
             $table->string('password');
+            $table->string('remember_token');
             $table->timestamps();
         });
     }
