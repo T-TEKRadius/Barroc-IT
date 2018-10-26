@@ -16,11 +16,8 @@ use Illuminate\Validation\Rules\In;
 
 class ClientController extends Controller
 {
-    public function __construct()
+    public function index()
     {
-        $this->middleware('guest')->except('destroy');
-    }
-    public function index() {
         //$games = Game::where('title', 'LIKE', '%a%')
         //    ->orderBy('title', 'DESC')
         //    ->get(['id', 'title', 'publisher']);
@@ -32,16 +29,23 @@ class ClientController extends Controller
             ->with('clients', $clients)
             ->with('sales', $sales);
     }
-    public function login(Request $request){
+
+    public function development()
+    {
+        return view('/development/development');
+    }
+
+    public function login(Request $request)
+    {
 
         $userdata = array(
-            'department'     => $request->department,
-            'password'  => $request->password
+            'department' => $request->department,
+            'password' => $request->password
         );
         if (Auth::attempt($userdata)) {
 
             echo 'SUCCESS!';
-            return Redirect('/'.Auth::user()->department);
+            return Redirect('/' . Auth::user()->department);
 
         } else {
 
@@ -49,11 +53,13 @@ class ClientController extends Controller
 
         }
     }
+
     public function logout()
     {
         Auth::logout();
         return redirect('/');
     }
+
     public function create(Request $request)
     {
         $input = $request->all();
@@ -93,7 +99,7 @@ class ClientController extends Controller
             Sale::create($inputs_sales);
 
             $input_finance = [
-                'client_id' =>$id[0]['id'],
+                'client_id' => $id[0]['id'],
                 'created_at' => Carbon::createFromFormat('Y-m-d', date('Y-m-d'))
             ];
 
@@ -104,28 +110,30 @@ class ClientController extends Controller
             return redirect('sales');
         }
     }
-    public function edit($id){
+
+    public function edit($id)
+    {
         $client = Client::findOrFail($id);
         $sales = Sale::findOrFail($id);
 
 
-        if(fnmatch('*/finance', url()->previous()))
-        {
+        if (fnmatch('*/finance', url()->previous())) {
             return view('sales/create')
                 ->with('client', $client)
                 ->with('sales', $sales)
                 ->with('key', '0800fc577294c34e0b28ad2839435945');
-        }
-        else if(fnmatch('*/sales/*', url()->previous())) {
+        } else if (fnmatch('*/sales/*', url()->previous())) {
             return view('sales/create')
                 ->with('client', $client)
                 ->with('sales', $sales);
         }
     }
-    public function apply($id, Request $request){
-        if(isset($id)){
-            if (isset($request['company_name'])){
-                $input=$request;
+
+    public function apply($id, Request $request)
+    {
+        if (isset($id)) {
+            if (isset($request['company_name'])) {
+                $input = $request;
 
                 $client = Client::findOrFail($id)->update([
                     'address_1' => $input['address_1'],
@@ -160,7 +168,8 @@ class ClientController extends Controller
         }
     }
 
-    public function show($id){
+    public function show($id)
+    {
 
         $client = Client::find($id);
 

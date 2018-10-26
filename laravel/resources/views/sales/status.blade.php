@@ -23,7 +23,7 @@
             </div>
             <div class="buttons">
               <a class="logout" href="{{ route('logout') }}">Logout</a>
-                <a class="add" href="create">Add client</a>
+                <a class="add" href="/sales/create">Add client</a>
                 </div>
                 </div>
             <div class="display">
@@ -50,8 +50,8 @@
                                     <i class="fas fa-check"></i>
                                 </td>
                             @endif
-                            <td><a href="status/{{$client->id}}">Show({{ count($client->invoices) }})</a></td>
-                            <td><a href="edit/{{$client->id}}">Edit</a></td>
+                            <td><a href="{{route('invoice.show',['id'=>$client->id])}}">Show({{ count($client->invoices) }})</a></td>
+                            <td><a href="{{route('sales.edit',['id'=>$client->id])}}">Edit</a></td>
                         </tr>
                     @endforeach
 
