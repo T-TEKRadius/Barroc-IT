@@ -14,7 +14,7 @@
         <h1><a href="#">Barroc-IT | Sales</a></h1>
     </div>
 </header>
-<button type="submit" onclick="window.location='/sales/status';">Back</button>
+<button type="submit" onclick="window.location='{{url()->previous()}}';">Back</button>
 <section id="main">
     <div class="container">
         <h2>Invoices {{ $client->company_name }}</h2>
@@ -23,7 +23,7 @@
                 <input type="text" name="search" placeholder="Search..">
             </div>
             <div class="buttons">
-                <a class="logout" href="#">Logout</a>
+                <a class="logout" href="{{route('logout')}}">Logout</a>
                 <a class="add" href="create/{{ $client->id}}">Add Invoice</a>
             </div>
         </div>

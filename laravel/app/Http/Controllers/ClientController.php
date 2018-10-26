@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Http\Middleware\SalesMiddleware;
 use App\Sale;
 use App\Invoice;
 use App\Finance;
@@ -32,7 +33,12 @@ class ClientController extends Controller
 
     public function development()
     {
-        return view('/development/development');
+        $clients = Client::all();
+        $sales = Sale::all();
+
+        return view('development/development')
+            ->with('clients', $clients)
+            ->with('sales', $sales);
     }
 
     public function login(Request $request)
@@ -122,7 +128,7 @@ class ClientController extends Controller
                 ->with('client', $client)
                 ->with('sales', $sales)
                 ->with('key', '0800fc577294c34e0b28ad2839435945');
-        } else if (fnmatch('*/sales/*', url()->previous())) {
+        } else if (fnmatch('*/sales*', url()->previous())) {
             return view('sales/create')
                 ->with('client', $client)
                 ->with('sales', $sales);
@@ -175,5 +181,26 @@ class ClientController extends Controller
 
         return view('sales/invoice')
             ->with('client', $client);
+    }
+    public function apply_finance(Request $request, $id){
+        $sales = Sale::findOrFail($id);
+
+        $sales->offer_status = $request->offer_stat;
+
+        $sales->save();
+
+        return redirect()->route('finance.show');
+    }
+
+    public function done_development($id){
+        $sales = Sale::findOrFail($id);
+
+        if($sales->offer_status != 0) {
+            $sales->offer_status = 0;
+            $sales->save();
+        }
+        return redirect()->route('development');
+
+
     }
 }

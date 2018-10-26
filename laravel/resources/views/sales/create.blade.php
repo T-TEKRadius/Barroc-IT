@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Barroc-IT | Add client</title>
-    <link href="{{ asset('/css/css.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
 </head>
 
 <body>
