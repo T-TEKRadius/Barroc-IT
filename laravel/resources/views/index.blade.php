@@ -8,10 +8,11 @@
   <body>
 <header>
   <div class="container">
-    <h1>Barroc-IT</h1>
+    <h1><a href="#">Barroc-IT</a></h1>
   </div>
-  </header>
+</header>
   <div class="container">
+    <div class="wrapper_login">
     <section id="login">
     <form method="post" action="/">
       @csrf
@@ -26,10 +27,13 @@
     </form>
     </section>
   </div>
+<section id="help">
   <div class="container">
-    <section id="help">
     <h2>Help</h2>
-    </section>
   </div>
+</section>
+<footer>
+  <p>© BARROC IT | 2017</p>
+</footer>
   </body>
 </html>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Barroc-IT | Finance status</title>
+    <title>Barroc-IT | Development</title>
     <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -13,12 +13,12 @@
 
 <header>
     <div class="container">
-        <h1>Barroc-IT | Finance</h1>
+        <h1>Barroc-IT | Development</h1>
     </div>
 </header>
 <section id="main">
     <div class="container">
-        <h2>Finance</h2>
+        <h2>Development</h2>
         <div class="nav">
             <div class="search">
                 <input type="text" name="search" placeholder="Search..">
