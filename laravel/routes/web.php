@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+# Guest
+
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/', function () {
         return view('index');
@@ -18,11 +21,9 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/', 'ClientController@login')->name('login.login');
 });
 
-
-
 Route::get('/logout', 'ClientController@logout')->name('logout');
 
-## SALES
+# SALES
 
 Route::group(['middleware' => 'sales'], function () {
 
@@ -38,6 +39,7 @@ Route::group(['middleware' => 'sales'], function () {
     Route::get('/sales/status/show/{id}/{link}', 'UploadController@invoice')->name('invoices.show');
     Route::get('/sales/status/{id}/{link}', 'UploadController@download')->name('invoice.download');
 });
+# Finance
 
 Route::group(['middleware' => 'finance'], function () {
 
@@ -48,6 +50,8 @@ Route::group(['middleware' => 'finance'], function () {
     Route::get('/finance/invoice/create/{id}', 'UploadController@show');
     Route::post('/finance/invoice/create/{id}', 'UploadController@add');
 });
+
+# Development
 
 Route::group(['middleware' => 'development'], function () {
 
