@@ -19,10 +19,6 @@ class ClientController extends Controller
 {
     public function index()
     {
-        //$games = Game::where('title', 'LIKE', '%a%')
-        //    ->orderBy('title', 'DESC')
-        //    ->get(['id', 'title', 'publisher']);
-
         $clients = Client::all();
         $sales = Sale::all();
 

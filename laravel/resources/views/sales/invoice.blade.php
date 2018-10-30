@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Barroc-IT | Sales status</title>
     <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
+    <script src="{{ asset('/js/js.js') }}"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
@@ -15,12 +16,13 @@
     </div>
 </header>
 <button type="submit" onclick="window.location='{{url()->previous()}}';">Back</button>
+<button type="submit" onclick="window.location='{{route('sales.index')}}'">Home</button>
 <section id="main">
     <div class="container">
         <h2>Invoices {{ $client->company_name }}</h2>
         <div class="nav">
             <div class="search">
-                <input type="text" name="search" placeholder="Search..">
+                <input type="text" name="search" placeholder="Search.." id="search" onkeyup="search(1)">
             </div>
             <div class="buttons">
                 <a class="logout" href="{{route('logout')}}">Logout</a>
@@ -28,10 +30,10 @@
             </div>
         </div>
         <div class="display">
-            <table>
+            <table id="table">
                 <tr>
-                    <th>File</th>
-                    <th>Added At</th>
+                    <th onclick="sort_table(0)">File</th>
+                    <th onclick="sort_table(1)">Added At</th>
                     <th>View</th>
                     <th>Delete</th>
                 </tr>

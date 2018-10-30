@@ -34,6 +34,8 @@ class DatabaseSeeder extends Seeder
         $employee->remember_token = '7MkfvDlYDMNL6hKCigjaLaWbH8KKX9CLjiYlqsXCvt9O4Ru7o0ijmKCYy3nP';
         $employee->save();
 
+        $this->call(ClientSeeder::class);
+
 
 
 
