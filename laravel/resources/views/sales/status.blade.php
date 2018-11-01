@@ -6,13 +6,15 @@
     <title>Barroc-IT | Sales status</title>
     <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
     <script src="{{ asset('/js/js.js') }}"></script>
+    <link href="{{ asset('/css/fontello.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('/js/modelscript.js') }}"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
         <div class="container">
-          <h1><a href="#">Barroc-IT | Sales</a></h1>
+          <h1>Barroc-IT | Sales</h1>
         </div>
     </header>
     <section id="main">
@@ -60,14 +62,24 @@
             </div>
         </div>
     </section>
-        <section id="help">
-          <div class="container">
-            <h2>Help</h2>
+    <section id="help">
+        <div class="container">
+            <button onclick="button()" id="helpBtn"><span>Help</span><i class="icon-help-circled"></i></button>
+
+            <div id="helpModal" class="modal">
+                <div class="help-modal-content">
+                    <span class="close">&times;</span>
+                    <p>To search a sepcific client, type his name in the search bar. <br> To add a new client, press the Add Client button. <br> To show client's invoices click on the 'Show(X)' link. <br> To edit client's information click on the 'Edit' link. <br> Press the logout button to logout.</p>
+                </div>
             </div>
+        </div>
     </section>
     <footer>
-      <p>© BARROC IT | 2017</p>
+        <p>© BARROC IT | 2018</p>
     </footer>
+    <script type="text/javascript">
+        openHelpModal();
+    </script>
 </body>
 
 </html>

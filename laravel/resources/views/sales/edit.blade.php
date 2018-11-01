@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Barroc-IT | Add client</title>
-    <link href="{{ asset('/css/css.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('/css/css.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/fontello.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('/js/modelscript.js') }}"></script>
 </head>
 
 <body>
@@ -71,10 +73,24 @@
             </form>
         </div>
     </section>
-    <div class="container">
-        <h2>Help</h2>
-    </div>
+    <section id="help">
+        <div class="container">
+            <button onclick="button()" id="helpBtn"><span>Help</span><i class="icon-help-circled"></i></button>
+
+            <div id="helpModal" class="modal">
+                <div class="help-modal-content">
+                    <span class="close">&times;</span>
+                    <p>To edit client's information fill all the fields you want to edit and press the 'Apply' button.</p>
+                </div>
+            </div>
+        </div>
     </section>
+    <footer>
+        <p>© BARROC IT | 2018</p>
+    </footer>
+    <script type="text/javascript">
+        openHelpModal();
+    </script>
 </body>
 
 </html>

@@ -119,6 +119,36 @@ h1 {
   font-weight: 500;
 }
 
+a {
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  color: #101334;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover {
+  color:  #ef1f04;
+ }
+
+ button {
+   font-weight: 700;
+   float: right;
+   display: inline-block;
+   border-radius: 4px;
+   padding: 10px 20px;
+   text-align: center;
+   color: white;
+   background-color:  #101334;
+   transition: 0.3s ease-in-out;
+   border: none;
+ }
+
+ button:hover{
+   background-color: #ef1f04;
+ }
+
 input:focus, textarea, input {
     outline: none !important;
 }
@@ -154,6 +184,84 @@ footer p {
   text-align: center;
 }
 
+header #login_img img{
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid black;
+}
+
+header #login_img h1 {
+  font-size: 80px;
+  position: absolute;
+   top: 200px;
+   left: 0;
+   margin-left: 100px;
+}
+
+header #login_img h2 {
+  font-size: 50px;
+  position: absolute;
+   top: 280px;
+   left: 0;
+   margin-left: 100px;
+}
+
+  #login {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  display: inline-block;
+}
+
+#login .psw {
+  margin-right: 10px;
+  font-size: 15px;
+  height: 30px;
+  color: #10133
+  outline: none;
+  border: 1px solid #b7bbbd;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+  -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  box-shadow: inset 2px 2px 2px 0px #dddddd;
+}
+
+#login .password {
+  display: inline-block;
+}
+
+.select_login {
+  font-size: 15px;
+  padding: 10px 8px 10px 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.select_login .select{
+  width: 100%;
+  background:url('arrow.png') no-repeat;
+  background-position:80% center;
+}
+
+.select_login .select select{
+  outline: none;
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+}
+
 /* SALES STATUS */
 
 #main h2 {
@@ -163,6 +271,10 @@ footer p {
 
 #main .nav {
   display: flex;
+}
+
+.back {
+  margin-top: 10px;
 }
 
 .search input[type=text] {
@@ -197,8 +309,13 @@ footer p {
   border-radius: 4px;
   padding: 10px 30px;
   text-align: center;
-  color: #EFE1D8;
-  background-color: #804F45;
+  color: white;
+  background-color:  #101334;
+  transition: 0.3s ease-in-out;
+}
+
+.buttons a:hover {
+  background-color: #ef1f04;
 }
 
 table {
@@ -224,6 +341,102 @@ tr:nth-child(even) {
 }
 .fa-spinner{
     color: orange;
+}
+
+#questions form {
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px 250px;
+}
+
+#questions label {
+  font-size: 15px;
+}
+
+#questions input[type] {
+  font-size: 15px;
+  height: 30px;
+  width: 200px;
+  outline: none;
+  border: 1px solid #b7bbbd;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+}
+
+#questions form .add a {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 10px 30px;
+  color: white;
+  background-color:  #101334;
+  transition: 0.3s ease-in-out;
+}
+
+
+#questions form .add a:hover {
+  background-color: #ef1f04;
+}
+
+/* HELP */
+
+
+#helpBtn {
+  float: right;
+  background-color: white;
+  border: none;
+  font-weight: bold;
+  color: #101334;
+  font-size: 20px;
+  transition-duration: 0.5s;
+  cursor:pointer;
+}
+
+#help button:focus {
+  outline:0;
+}
+
+#help button:hover {
+  color: #ef1f04;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.help-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
