@@ -342,6 +342,7 @@ tr:nth-child(even) {
 .fa-spinner{
     color: orange;
 }
+<<<<<<< Updated upstream
 
 #questions form {
     display: grid;
@@ -439,6 +440,9 @@ tr:nth-child(even) {
     cursor: pointer;
 }
 
+=======
+/*Help Popup*/
+>>>>>>> Stashed changes
 
 
 

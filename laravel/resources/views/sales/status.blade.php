@@ -64,6 +64,7 @@
     </section>
     <section id="help">
         <div class="container">
+<<<<<<< Updated upstream
             <button onclick="button()" id="helpBtn"><span>Help</span><i class="icon-help-circled"></i></button>
 
             <div id="helpModal" class="modal">
@@ -72,6 +73,9 @@
                     <p>To search a sepcific client, type his name in the search bar. <br> To add a new client, press the Add Client button. <br> To show client's invoices click on the 'Show(X)' link. <br> To edit client's information click on the 'Edit' link. <br> Press the logout button to logout.</p>
                 </div>
             </div>
+=======
+            <h2>Help</h2>
+>>>>>>> Stashed changes
         </div>
     </section>
     <footer>

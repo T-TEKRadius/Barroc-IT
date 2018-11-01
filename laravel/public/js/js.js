@@ -52,7 +52,3 @@ function sort_table(n) {
         }
     }
 }
-function help() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
