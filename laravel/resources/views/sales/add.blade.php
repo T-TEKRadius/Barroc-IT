@@ -33,7 +33,7 @@
         <div id="helpModal" class="modal">
             <div class="help-modal-content">
                 <span class="close">&times;</span>
-                <p>To add an </p>
+                <p>To add an invoice select the file and press "Add Invoice"</p>
             </div>
         </div>
     </div>
