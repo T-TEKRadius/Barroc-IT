@@ -54,7 +54,6 @@
 </section>
 <section id="help">
     <div class="container">
-<<<<<<< Updated upstream
         <button onclick="button()" id="helpBtn"><span>Help</span><i class="icon-help-circled"></i></button>
 
         <div id="helpModal" class="modal">
@@ -63,10 +62,6 @@
                 <p>To search a specific invoice, type the invoice's date in the searchbar. <br> Press the 'Add invoice' button to add a new invoice. <br> Press the 'Logout' button to logout. <br> Press the 'back' button to go bacak to the previous page. <br>Press the 'Home' button to go back to the Sales homepage. </p>
             </div>
         </div>
-=======
-        <h2>Help</h2>
-        <span class="searchtext" id="searchtext"></span>
->>>>>>> Stashed changes
     </div>
 </section>
 <footer>
